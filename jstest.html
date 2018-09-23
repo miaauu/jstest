@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jstest</title>
+    <link rel="stylesheet" type="test/css" href="surface_styles.css">
+    <script type="module" src="main.js"></script>
+    <script src="scripts/console-ui.js"></script>
+</head>
+
+<body>
+    <aside class="nav--super-vertical g--2 g-m--3 g-s--6 g-t--12 no-margin-vertical">
+        <div class="g--12 logo-area no-margin-vertical">
+            <h4 class="color--blue no-margin-vertical">jstest</h4>
+        </div>
+        <nav class="g--12 no-margin-vertical">
+            <a>Run Tests</a>
+            <a onclick="console.log('about.. vanilla javascript in-browser test rig .. ')">About</a>
+        </nav>
+    </aside>
+
+    <main class="g--10 g-m--12 m--2 m-m--0 no-margin-vertical">
+        <header>
+            <h1 class="m--1 g--4 g-s--11 docsHeader">in-browser js tets</h1>
+        </header>
+        <div class="g--10 m--1">
+            <div class="g--12">
+                <h3>Tests found</h3>
+                <p>abc.js</p>
+                <h3>Console output</h3>
+                <p id="console-ui"></p>
+            </div>
+        </div>
+    </main>
+</body>
+
+<script>
+    let consoleUi = document.getElementById("console-ui")
+    redefineConsoleLog((msg) => {consoleUi.innerHTML += msg + '<br/>';})
+</script>
+
+</html>
